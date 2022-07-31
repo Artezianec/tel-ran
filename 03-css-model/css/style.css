@@ -1,0 +1,33 @@
+body {
+    font-size: 32px;
+    margin: 0;
+}
+
+#outer1 {
+    height: 300px;
+    background-color: rgba(37, 46, 170, 0.5);
+    margin-bottom: 40px;
+    /* padding-left: 35px; */
+    /* padding-top: 15px; */
+    padding-top: 1px;
+    /* border-top: 1px solid rgba(100, 100, 100, 0.0); */
+}
+
+#outer2 {
+    height: 200px;
+    width: 60%;
+    background-color: rgba(57, 200, 62, 0.8);
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#inner1 {
+    height: 100px;
+    width: 80%;
+    background-color: rgba(243, 57, 79, 0.8);
+    padding: 30px 10px;
+    /* margin-left: 35px; */
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15px;
+}

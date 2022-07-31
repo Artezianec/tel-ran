@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarWars</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/loading.css">
+    <!-- <link rel="stylesheet" href="./css/gallery.css"> -->
+    <script src="./js/main.js"></script>
+
+</head>
+
+<body onload="ShowSite()" style="margin:0;">
+    <div id="loader"></div>
+    <div style="display:none;" id="site" class="animate-bottom">
+        <section class="showcase">
+            <div class="container">
+                <div class="showcase-data">
+                    <span class="tagline">A New Hope</span>
+                    <h1 class="title">Luke Skywalker</h1>
+
+                    <div class="button">
+                        <p>Send me an <span class="email">email</span></p>
+                    </div>
+                    <audio autoplay controls src="./music/8d82b5_Star_Wars_Main_Theme_Song.mp3">
+                        <p>Error load music</p>
+                    </audio>
+                </div>
+                <nav>
+                    <ul class="menu">
+                        <li>Home</li>
+                        <li>About me</li>
+                        <li>Star wars</li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+            </div>
+            <img src="./images/hero-top.png" alt="" class="parallax-img img-top">
+            <img src="./images/hero-middle.png" alt="" class="parallax-img img-middle">
+            <img src="./images/hero-bottom.png" alt="" class="parallax-img img-bottom">
+            <img src="./images/hero-footer.png" alt="" class="parallax-img img-footer">
+            <main>
+                <div class="text">
+                    It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first
+                    victory
+                    against
+                    the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the
+                    Empire's
+                    ultimate
+                    weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.
+                    Pursued
+                    by
+                    the
+                    Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen
+                    plans
+                    that
+                    can
+                    save her people and restore freedom to the galaxy....
+                </div>
+                <div class="gallery">
+                    <h2>Dream Team</th>
+                        <div>
+                            <img src="./images/friend1.jpg" alt="Friend">
+                            <img src="./images/friend2.jpg" alt="Friend">
+                            <img src="./images/friend3.jpg" alt="Friend">
+                        </div>
+                        <div>
+                            <img src="./images/friend4.jpg" alt="Friend">
+                            <img src="./images/friend5.jpg" alt="Friend">
+                            <img src="./images/friend6.jpg" alt="Friend">
+                        </div>
+                        <div>
+                            <img src="./images/friend7.jpg" alt="Friend">
+                            <img src="./images/friend8.jpg" alt="Friend">
+                            <img src="./images/friend9.jpg" alt="Friend">
+                        </div>
+                </div>
+            </main>
+        </section>
+        <div class="test" style="height: max-content;"></div>
+    </div>
+
+    <script>
+        var myVar;
+
+        function ShowSite() {
+            myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("site").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

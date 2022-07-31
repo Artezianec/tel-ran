@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+
+div {
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.header,
+.footer {
+    height: 50px;
+}
+
+.header {
+    background-color: blue;
+}
+
+.footer {
+    background-color: pink;
+    clear: both;
+}
+
+.left1 {
+    height: 300px;
+    width: 150px;
+    background-color: #00ff00;
+    float: left;
+}
+
+.right1 {
+    height: 300px;
+    width: 650px;
+    background-color: orange;
+    float: right;
+}
+
+.left2 {
+    height: 350px;
+    width: 150px;
+    background-color: darkred;
+    float: left;
+}
+.right2 {
+    height: 100px;
+    width: 50px;
+    background-color: violet;
+    float: right;
+}
+.right3 {
+    height: 300px;
+    width: 550px;
+    background-color: deepskyblue;
+    float: right;
+}
+.right4 {
+    height: 350px;
+    width: 50px;
+    background-color: rgb(49, 9, 49);
+    float: right;
+}

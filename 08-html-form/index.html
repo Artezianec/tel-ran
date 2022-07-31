@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Form</title>
+</head>
+
+<body>
+        <div class="head">
+        <form name="register" action="#" method="get">
+            <fieldset>
+                <legend>Personal data</legend>
+                <p>
+                    <label for="firstname">Enter first name:</label>
+                    <input id="firstname" type="text" name="fName" placeholder="First Name">
+                </p>
+                <p>
+                    <label for="lastname">Enter last Name:</label>
+                    <input id="lastname" type="text" name="tName" placeholder="Last Name">
+                </p>
+                <p>
+                    <label for="email">Enter Email:</label>
+                    <input id="email" type="email" name="eMail" placeholder="email" required>
+                </p>
+                <p>
+                    <label for="password">Enter password:</label>
+                    <input id="password" type="password" name="password" autofocus autocomplete="off"
+                        placeholder="password">
+                </p>
+            </fieldset>
+            <p>
+                Gender:
+                <label>
+                    Male
+                    <input type="radio" name="gender" value="1">
+                </label>
+                <label>
+                    Female
+                    <input type="radio" name="gender" value="2">
+                </label>
+                <label>
+                    Other...
+                    <input type="radio" name="gender" value="3">
+                </label>
+            </p>
+            <p>
+                Hobby:
+                <label>
+                    Vodka
+                    <input type="checkbox" name="vodka">
+                </label>
+                <label>
+                    Kanabis
+                    <input type="checkbox" name="Kanabis">
+                </label>
+                <label>
+                    Sex
+                    <input type="checkbox" name="sex">
+                </label>
+            </p>
+            <p>
+                <label>
+                    Birth date:
+                    <input type="date" name="birthDate">
+                </label>
+            </p>
+            <p>
+                <label>Car:</label>
+                <select name="car" id="">
+                    <option>Mazda</option>
+                    <option>Toyota</option>
+                    <option>Renault</option>
+                    <option>Mercedes</option>
+                    <option>B.M.W</option>
+                </select>
+            </p>
+            <p>
+                <label>
+                    Comment:
+                    <textarea name="content"></textarea>
+                </label>
+            </p>
+    </div>
+    <div class="footer">
+        <input type="submit" value="Send">
+        <input type="reset" value="Clear">
+        <input type="button" value="back">
+        <input type="button" value="forward">
+    </div>
+    </form>
+</body>
+
+</html>

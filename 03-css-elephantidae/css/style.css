@@ -1,0 +1,56 @@
+body {
+    background-color: #d2e5e792;
+    text-shadow: 1px 1px 2px rgb(74, 72, 72), 0 0 15px rgb(54, 54, 210), 0 0 5px rgb(139, 139, 148);
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+h2 {
+    color: rgba(129, 129, 23, 0.573);
+}
+
+h1 {
+    color: rgba(181, 181, 181, 0.5);
+    text-align: center;
+}
+
+img:hover {
+    transition-duration: 4s;
+    transform: rotate(360deg);
+}
+
+a:hover {
+    color: rgba(0, 229, 255, 0.573);
+}
+
+img {
+    border-radius: 50%;
+    box-shadow: 15px 15px rgba(0, 0, 0, 0.5);
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid black;
+}
+
+table,
+td,
+th {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 1px solid blue;
+    border-collapse: collapse;
+}
+
+#asian {
+    border-color: crimson;
+}
+
+#african {
+    border-color: green;
+}
+p {
+    font-family: 'Mansalva', cursive;
+    font-size: 24px;
+}

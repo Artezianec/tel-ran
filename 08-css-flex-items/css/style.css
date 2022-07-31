@@ -1,0 +1,40 @@
+body {
+    margin: 150px;
+    background-color: #725a7a;
+}
+
+.flex-container {
+    width: 660px;
+    height: 450px;
+    background-color: #65382b;
+    margin: 0 auto;
+    display: flex;
+}
+
+.item {
+    height: 150px;
+    /* width: 250px; */
+    flex-basis: 250px;
+    min-width: 220px;
+    text-align: center;
+    font-size: 2em;
+    flex-shrink: 0;
+}
+
+.red {
+    background-color: #c56d86;
+    /* flex-grow: 1; */
+    flex-shrink: 1;
+}
+
+.green {
+    background-color: #2b4c59;
+    /* flex-grow: 2; */
+    flex-shrink: 2;
+}
+
+.blue {
+    background-color: #355c7d;
+    /* flex-grow: 3; */
+    flex-shrink: 3;
+}

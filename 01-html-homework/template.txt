@@ -1,0 +1,15 @@
+
+<body>
+    <h1>Scottish Fold</h1>
+    <a href="./index.html">Main</a><br>
+    <a href="./history.html">History</a><br>
+    <a href="./characteristics.html">Characteristics</a><br>
+    <a href="./genetics.html">Genetics</a><br>
+    <a href="./health.html">Health</a><br>
+    <br>
+    <h2>Text main</h2>
+<p>Text</p>
+    <img height="20%" width="33%" src="./images/main.jpeg">
+    <img height="20%" width="33%" src="./images/main2.jpeg">
+    <img height="20%" width="33%" src="./images/main3.jpeg">
+</body>
