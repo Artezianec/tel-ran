@@ -8,7 +8,7 @@ while (inputData) {
         persons.push(person);
     }
     else {
-        alert(`id = ${val[0]} is exist in persons`)
+        alert(`id = ${val[0]} is exist in persons!`)
     }
     inputData = prompt('Enter person data separate by ";"');
 }
