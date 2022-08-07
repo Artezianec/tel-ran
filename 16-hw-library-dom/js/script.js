@@ -23,13 +23,13 @@ function findBook(library, isbn) {
     return -1;
 }
 
-function printLibrary(library) {
-    const newOl = document.createElement('ol');
-    root.append(newOl);
-    for (let i = 0; i < library.length; i++) {
-        newOl.innerHTML += (`<li>${library[i].toString()}</li>`);
-    }
-}
+// function printLibrary(library) {
+//     const newOl = document.createElement('ol');
+//     root.append(newOl);
+//     for (let i = 0; i < library.length; i++) {
+//         newOl.innerHTML += (`<li>${library[i].toString()}</li>`);
+//     }
+// }
 
 // function printLibrary(library) {
 //     const newOl = document.createElement('ol');
@@ -40,6 +40,22 @@ function printLibrary(library) {
 //         newOl.append(newLi);
 //     }
 // }
+
+function printLibrary(library) {
+    const list = document.createElement('ol');
+    root.appendChild(list);
+    for (let i = 0; i < library.length; i++) {
+        const li = document.createElement('li');
+        const h2 = document.createElement('h2');
+        const h2Text = document.createTextNode(`Book ${i + 1}`);
+        h2.appendChild(h2Text);
+        li.appendChild(h2);
+        const p = document.createElement('p');
+        const text = document.createTextNode(library[i].toString());
+        p.appendChild(text);
+        li.appendChild(p);
+    }
+}
 function Book(isbn, title, author, year) {
     this.isbn = isbn;
     this.title = title;
