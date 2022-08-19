@@ -1,6 +1,11 @@
 const additem = document.getElementById('additem');
 const todolist = document.getElementById('todolist');
-additem.addEventListener('click', addItemToList);
+additem.onclick = addItemToList;
+// additem.onkeyup = function (e) {
+//     if (e.key === 'Enter') {
+//         addItemToList;
+//     }
+// }
 function addItemToList() {
     if (item.value) {
         const li = document.createElement('li');
