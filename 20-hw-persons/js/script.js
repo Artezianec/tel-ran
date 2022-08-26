@@ -12,8 +12,20 @@ function addPerson() {
         persons.push(person);
         const li = document.createElement('li');
         const text = document.createTextNode(person.toString());
-        li.append(text);
+        // const btndel = createButtonDelete();
+        const btndel = document.createElement('button');
+        btndel.append(document.createTextNode('X'));
+        btndel.classList.add('del');
+        btndel.onclick = function (e) {
+            e.target.parentElement.remove();
+            const element = persons.findIndex(item => item.id === person.id);
+            persons.splice(element, 1);
+            console.log(persons);
+            clean();
+        }
+        li.append(text, btndel);
         personslist.append(li);
+        console.log(persons);
     }
     clean();
 }
@@ -28,39 +40,34 @@ function Person(id, firsName, lastName, age) {
     }
 }
 
-// function checkId(array, id) {
-//     for (let i = 0; i < array.length; i++) {
-//         if (array[i].person.id === id) {
-//             return i;
-//         }
-//         return -1;
-//     }
-// }
 
 function clean() {
     personid.value = '';
     fname.value = '';
     lname.value = '';
     page.value = '';
+    if (stats.firstElementChild.nextElementSibling) {
+        stats.removeChild(stats.firstElementChild.nextElementSibling);
+    }
 }
 
 function addStats() {
-        const newdiv = document.createElement('div');
-        let age = persons.reduce((accum, p) => accum + p.age, 0) / persons.length;
-        let ages = document.createTextNode(`Average age = ${age}`);
-        const h4ave = document.createElement('h4').appendChild(ages);
-        age = persons.reduce((min, p) => p.age < min ? p.age : min, persons[0].age);
-        ages = document.createTextNode(`Min age = ${age}`);
-        const h4min = document.createElement('h4').appendChild(ages);
-        age = persons.reduce((max, p) => p.age > max ? p.age : max, persons[0].age);
-        ages = document.createTextNode(`Max age = ${age}`);
-        const h4max = document.createElement('h4').appendChild(ages);
-        newdiv.append(h4ave, h4min, h4max);
-        if (stats.firstElementChild.nextElementSibling) {
-            stats.replaceChild(newdiv, stats.firstElementChild.nextElementSibling);
-        } else {
-            stats.appendChild(newdiv);
-        }
+    const newdiv = document.createElement('div');
+    let age = persons.reduce((accum, p) => accum + p.age, 0) / persons.length;
+    let ages = document.createTextNode(`Average age = ${age}`);
+    const h4ave = document.createElement('h4').appendChild(ages);
+    age = persons.reduce((min, p) => p.age < min ? p.age : min, persons[0].age);
+    ages = document.createTextNode(`Min age = ${age}`);
+    const h4min = document.createElement('h4').appendChild(ages);
+    age = persons.reduce((max, p) => p.age > max ? p.age : max, persons[0].age);
+    ages = document.createTextNode(`Max age = ${age}`);
+    const h4max = document.createElement('h4').appendChild(ages);
+    newdiv.append(h4ave, h4min, h4max);
+    if (stats.firstElementChild.nextElementSibling) {
+        stats.replaceChild(newdiv, stats.firstElementChild.nextElementSibling);
+    } else {
+        stats.appendChild(newdiv);
+    }
 }
 
 //click add person => add unique person to array persons and add person to
