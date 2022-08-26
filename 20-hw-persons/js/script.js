@@ -12,7 +12,6 @@ function addPerson() {
         persons.push(person);
         const li = document.createElement('li');
         const text = document.createTextNode(person.toString());
-        // const btndel = createButtonDelete();
         const btndel = document.createElement('button');
         btndel.append(document.createTextNode('X'));
         btndel.classList.add('del');
@@ -20,12 +19,10 @@ function addPerson() {
             e.target.parentElement.remove();
             const element = persons.findIndex(item => item.id === person.id);
             persons.splice(element, 1);
-            console.log(persons);
             clean();
         }
         li.append(text, btndel);
         personslist.append(li);
-        console.log(persons);
     }
     clean();
 }
