@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="tel-ran">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/19-js-event2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/11-js-intro-1.zip!/" />
+      <root url="jar://$PROJECT_DIR$/20-hw-persons 2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/17-jss-dom-2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/16-hw-library-dom.zip!/" />
+      <root url="jar://$PROJECT_DIR$/12-hw-array.zip!/" />
+      <root url="jar://$PROJECT_DIR$/15-hw-person.zip!/" />
+      <root url="jar://$PROJECT_DIR$/10-css-coffee-bootstrap.zip!/" />
+      <root url="jar://$PROJECT_DIR$/14-hw-library.zip!/" />
+      <root url="jar://$PROJECT_DIR$/20-hw-persons.zip!/" />
+      <root url="jar://$PROJECT_DIR$/18-hw-todo.zip!/" />
+      <root url="jar://$PROJECT_DIR$/13-hw-array-sort.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
