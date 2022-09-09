@@ -15,14 +15,14 @@ function addPerson() {
         buttonDel.onclick = function (e) {
             e.target.parentElement.remove();
             company.removeEmployee(employee.id);
-            clean()
+            clean();
         }
         li.append(buttonDel);
         personsList.append(li);
     } else {
         alert(`Employee = ${employee.id} is exists`);
     }
-    clean()
+    clean();
 };
 
 function clean() {
@@ -38,7 +38,7 @@ function clean() {
 
 function addStats() {
     const newdiv = document.createElement('div');
-    newdiv.append(`Average age: ` + company.ages , ` Total Salary: ` + company.totalSalary, ` Min age: ` + company.minage, ` Max age: ` + company.maxage, ` Average salary: ` + company.avesalary);
+    newdiv.append(`Average age: ` + company.ages, ` Total Salary: ` + company.totalSalary, ` Min age: ` + company.minage, ` Max age: ` + company.maxage, ` Average salary: ` + company.avesalary);
     if (stats.firstElementChild.nextElementSibling) {
         stats.replaceChild(newdiv, stats.firstElementChild.nextElementSibling);
     } else {
