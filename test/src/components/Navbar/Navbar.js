@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import Fade from 'react-reveal/Fade';
 import { IoMenuSharp, IoHomeSharp } from 'react-icons/io5';
-import { HiDocumentText,HiLogin } from 'react-icons/hi';
+import { HiDocumentText, HiLogin } from 'react-icons/hi';
 import { BsFillGearFill } from 'react-icons/bs';
 import { MdPhone } from 'react-icons/md';
 import { FaUser, FaFolderOpen } from 'react-icons/fa';
@@ -242,6 +242,23 @@ function Navbar() {
                                     />
                                     <span className={classes.drawerLinks}>
                                         Services
+                                    </span>
+                                </div>
+                            </NavLink>
+                        </Fade>
+                        <Fade left>
+                            <NavLink
+                                to='/register'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <div className={classes.drawerItem}>
+                                    <HiLogin
+                                        className={classes.drawerIcon}
+                                    />
+                                    <span className={classes.drawerLinks}>
+                                        register
                                     </span>
                                 </div>
                             </NavLink>

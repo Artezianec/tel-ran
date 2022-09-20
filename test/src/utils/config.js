@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     database: 'test'
 });
 
-app.post('/login', (req, res) => {
+app.post('/register', (req, res) => {
     const id = req.body.id;
     const username = req.body.username;
     const password = req.body.password;
@@ -28,7 +28,29 @@ app.post('/login', (req, res) => {
         }
     );
 });
-//func search
+
+app.post('/login', (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    db.query('SELECT * FROM users WHERE username = ? AND password = ?',
+        [username, password],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.send({ err: err })
+            }
+            if (result) {
+                console.log(result);
+                res.send(result)
+            } else {
+                console.log('Wrong username/password');
+                res.send({ message: 'Wrong username/password' });
+            }
+        }
+    )
+})
+
 app.listen(9000, () => {
     console.log('Server started');
 });

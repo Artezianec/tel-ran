@@ -1,0 +1,84 @@
+.loginPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+.loginPage-header {
+    height: 35vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.loginPage-header > h1 {
+    font-size: 4rem;
+    font-family: var(--primaryFont);
+}
+
+.loginPage-container {
+    padding: 3rem 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.loginPage-search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginPage-container {
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.loginPage-grid {
+    display: flex;
+    gap: 4rem; 
+}
+
+@media (min-width: 992px) and (max-width: 1380px) {
+
+}
+
+@media screen and (max-width: 992px) {
+    .loginPage-header {
+        height: 25vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .loginPage-grid {
+        gap: 3rem;
+    }
+}
+
+
+@media screen and (max-width: 702px) {
+    .loginPage-grid {
+        gap: 1.5rem;
+    }
+}
+@media screen and (max-width: 550px) {
+    .loginPage-header h1 {
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .loginPage-header {
+        height: 20vh;
+    }
+    .loginPage-header h1 {
+        font-size: 2.5rem;
+    }
+}

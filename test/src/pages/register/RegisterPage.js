@@ -9,8 +9,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import './LoginPage.css'
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { headerData } from '../../data/headerData'
-
-function LoginPage() {
+function RegisterPage() {
 
     const [usernameReg, setUserNameReg] = useState('');
     const [passwordReg, setPasswordReg] = useState('');
@@ -18,10 +17,13 @@ function LoginPage() {
     const [idReg, setidReg] = useState('');
 
     const register = () => {
-        Axios.post("http://localhost:9000/login", { id: idReg, username: usernameReg, password: passwordReg, email: emailReg }).then((responce) => {
+        Axios.post("http://localhost:9000/register", { id: idReg, username: usernameReg, password: passwordReg, email: emailReg }).then((responce) => {
             console.log(responce);
-        });
+        }).catch((e) => {
+            console.log(e);
+        })
     };
+
 
     const { theme } = useContext(ThemeContext);
 
@@ -60,38 +62,38 @@ function LoginPage() {
                 <Link to="/">
                     <AiOutlineHome className={classes.home} />
                 </Link>
-                <h1 style={{ color: theme.secondary }}>Login page</h1>
+                <h1 style={{ color: theme.secondary }}>Register page</h1>
             </div>
             <div className="loginPage-container">
                 <Grid className="loginPage-grid" container direction="row" alignItems="center" justifyContent="center">
                     <div>
                         <label style={{ color: theme.loginColors }}>ID</label>
-                        <input
+                        <input id='id'
                             type='text'
                             onChange={(e) => {
                                 setidReg(e.target.value);
                             }} />
                         <br />
                         <label style={{ color: theme.loginColors }}>Username</label>
-                        <input
+                        <input id='username'
                             type='text'
                             onChange={(e) => {
                                 setUserNameReg(e.target.value);
                             }} />
                         <br />
                         <label style={{ color: theme.loginColors }}>Password</label>
-                        <input type='password'
+                        <input type='password' id='password'
                             onChange={(e) => {
                                 setPasswordReg(e.target.value);
                             }}
                         /><br />
                         <label style={{ color: theme.loginColors }}>Email</label>
-                        <input type='email'
+                        <input type='email' id='email'
                             onChange={(e) => {
                                 setEmailReg(e.target.value);
                             }} />
                         <br />
-                        <button onClick={register}>Register</button>
+                        <button id='register' onClick={register}>Register</button>
                     </div>
                 </Grid>
             </div>
@@ -100,4 +102,4 @@ function LoginPage() {
 }
 
 
-export default LoginPage
+export default RegisterPage

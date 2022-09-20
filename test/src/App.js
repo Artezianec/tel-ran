@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import { ThemeContext } from './contexts/ThemeContext';
-import { Main, BlogPage, ProjectPage, LoginPage } from './pages'
+import { Main, BlogPage, ProjectPage, RegisterPage, LoginPage } from './pages'
 import { BackToTop } from './components'
 import ScrollToTop from './utils/ScrollToTop'
 
@@ -12,16 +12,17 @@ function App() {
 
   const { theme } = useContext(ThemeContext);
 
- console.log = console.warn = console.error = () => {};
+  console.log = console.warn = console.error = () => { };
 
   return (
     <div className="app">
       <Router>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/blog" exact component={BlogPage} />
           <Route path="/projects" exact component={ProjectPage} />
+          <Route path="/register" exact component={RegisterPage} />
           <Route path="/login" exact component={LoginPage} />
           <Redirect to="/" />
         </Switch>
