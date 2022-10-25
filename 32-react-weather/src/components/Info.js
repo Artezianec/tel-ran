@@ -1,10 +1,11 @@
-import React from "react"
-function Info() {
+import React from "react";
+const Info = () => {
     return (
         <div>
-            <h1>Weather Application</h1>
+            <h1>Weather application</h1>
             <p>Your city weather</p>
         </div>
     )
 }
-export default Info
+
+export default Info;

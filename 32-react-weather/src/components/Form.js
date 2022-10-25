@@ -1,25 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { addr, key } from '../utils/Key';
+import React from 'react';
 
-function Form() {
-    const [city, setCity] = useState('');
-    useEffect(() => {
-        document.title = `Weather for city ${city}`;
-    })
+const Form = ({getWeather}) => {
 
-    const handleSubmit = () => {
-        fetch(`${addr}q=${city}&appid=${key}`)
-            .then(responce => responce.json())
-            .then(data => console.log(data))
-    }
-    return (
-        <div onSubmit={handleSubmit}>
-            <input type='text' name='city' placeholder='City' onChange={(e) => { setCity(e.target.value) }
-            } />
+  const handleSubmit = e => {
+    e.preventDefault();
+    const city = e.target.city.value.trim();
+    getWeather(city)
+  }
 
-            <button onClick={handleSubmit}>Get Weather state</button>
-        </div>
-    )
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type='text' name='city' placeholder='City' />
+      <button type='submit'>Get weather</button>
+    </form>
+  )
 }
 
 export default Form

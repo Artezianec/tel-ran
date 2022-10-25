@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import Info from './components/Info';
-import Data from './components/Data';
-
+import Data from "./components/Data";
+import Info from "./components/Info";
 
 function App() {
   return (

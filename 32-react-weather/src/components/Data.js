@@ -1,6 +1,6 @@
 import React from 'react'
-import { addr, key } from '../utils/Key'
-import Form from './Form'
+import { api_key, base_url } from '../utils/constants'
+import Form from './FormControl'
 import Weather from './Weather'
 
 class Data extends React.Component {
@@ -8,35 +8,42 @@ class Data extends React.Component {
         super(props)
 
         this.state = {
-            country: 'IL',
-            city: 'Rehovot',
-            temp: 23,
-            pressure: 1000,
-            sunset: '18:05'
+            weatherInfo: {},
+            message: 'Enter city name'
         }
     }
 
-    getWeather = city => {
-        fetch(`${addr}q=${city}&appid=${key}`)
-            .then(responce => responce.json())
-            .then(data => this.setState(
-                {
+    getWeather = async (city) => {
+        try {
+            const response = await fetch(`${base_url}?q=${city}&appid=${api_key}&units=metric`)
+            const data = await response.json();
+            this.setState({
+                weatherInfo: {
                     country: data.sys.country,
                     city: data.name,
                     temp: data.main.temp,
                     pressure: data.main.pressure,
                     sunset: data.sys.sunset
-                }
-            ))
+                },
+                message: ''
+            })
+        }
+        catch (e) {
+            this.setState({
+                message: 'Enter correct city name'
+            })
+        }
     }
+
     render() {
         return (
             <div>
-                <Form />
-                <Weather info={this.state} />
+                <Form getWeather={this.getWeather} />
+                <Weather info={this.state.weatherInfo} message={this.state.message} />
             </div>
         )
     }
+
 }
 
 export default Data
