@@ -6,7 +6,7 @@ const DreamTeam = () => {
     return (
         <section className="float-end w-50 row border mx-1">
             <h2 className="col-12 text-center">Dream Team</h2>
-            {friends.map((friend, index) => <Friend key={index * 10} pos={index + 1} picture={friend} />)}
+            {friends.map((friend, index) => <Friend key={index} pos={index + 1} picture={friend} />)}
         </section>
     )
 }

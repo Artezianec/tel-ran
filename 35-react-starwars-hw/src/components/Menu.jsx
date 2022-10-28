@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Menu = ({ name }) => {
+const Menu = ({ name, change }) => {
     return (
-        <li className="nav-item btn btn-danger mx-1"> {name} </li>
+        <li onClick={() => change(name)} className="nav-item btn btn-danger mx-1"> {name} </li>
     )
 }
 

@@ -1,0 +1,210 @@
+@font-face {
+    font-family: blanka;
+    src: url(../font/Blanka-Regular.otf);
+}
+
+@font-face {
+    font-family: poller;
+    src: url(../font/PollerOne-Regular.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    margin-left: 10px;
+    padding-top: 70%;
+    max-width: 1000px;
+    position: relative;
+    z-index: 100;
+    color: #fbd784;
+}
+
+body {
+    font-family: poller;
+    background-color: #010101;
+    line-height: 3.2rem;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+.showcase {
+    position: relative;
+    height: 1000px;
+}
+
+.showcase::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg,
+            rgba(0, 0, 0, .6), transparent 77%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+.showcase-data {
+    padding-top: 150px;
+    max-width: 1000px;
+    position: relative;
+    z-index: 100;
+}
+
+.tagline {
+    display: inline-block;
+    font-size: 14px;
+    color: #fbd784;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-left: 55px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.tagline::before {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background-color: #fbd784;
+    position: absolute;
+    top: 50%;
+    left: -55px;
+    transform: translateY(-50%);
+}
+
+.title {
+    font-family: blanka;
+    font-size: clamp(50px, 10vw, 100px);
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    animation: neon 5s infinite;
+}
+
+@keyframes neon {
+
+    0%,
+    39%,
+    41%,
+    59%,
+    61%,
+    100% {
+        text-shadow:
+            white 0 0 12px,
+            #628c90 0 0 24px,
+            #006af9 0 0 36px;
+    }
+
+    40%,
+    60% {
+        text-shadow: none;
+    }
+}
+
+.menu {
+    cursor: pointer;
+    position: fixed;
+    top: 100px;
+    right: 0;
+    font-family: blanka;
+    font-size: clamp(50px, 10px, 100px);
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 4px;
+    list-style: none;
+    z-index: -1;
+    animation: neon 5s infinite;
+}
+
+.parallax-img {
+    width: 100%;
+    min-height: 600px;
+    position: absolute;
+    left: 0;
+    object-fit: cover;
+    object-position: 30% 50%;
+}
+
+.img-top {
+    top: 0;
+}
+
+.img-middle {
+    top: 15%;
+}
+
+.img-footer {
+    padding-top: 100%;
+    top: 100%;
+    z-index: 10;
+}
+
+.img-bottom {
+    top: 50%;
+    z-index: 110;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+a:visited {
+    color: #fff;
+}
+
+.text:after {
+    padding-top: 70px;
+    content: "";
+    display: block;
+    height: 70px;
+    background-image: url('../images/sword.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.button {
+    display: flex;
+    align-self: flex-end;
+    justify-content: left;
+    color: #fbd784;
+    z-index: 120;
+    cursor: pointer;
+}
+
+.gallery {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid goldenrod;
+    border-radius: 0 0 15px 15px;
+}
+
+img {
+    width: 250px;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+    background-color: #667d9e;
+    color: #010101;
+}
