@@ -1,9 +1,9 @@
-//rafce
 import React from 'react'
+import { starwars } from '../utils/constants'
 
 const StarWars = () => {
   return (
-    <div>StarWars</div>
+    <div>{starwars}</div>
   )
 }
 

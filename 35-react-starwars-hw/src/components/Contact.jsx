@@ -1,10 +1,22 @@
-//rafce
 import React from 'react'
 
-const Contact = () => {
+class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      planets: []
+    };
+  }
+
+  render() {
     return (
-        <div>Contact</div>
+      <div>
+        <form>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     )
+  }
 }
 
 export default Contact

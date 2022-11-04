@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+const base_url = 'https://sw-info-api.herokuapp.com';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      isLoading: true,
+      character: {}
+    }
+  }
+
+  componentDidMount(){
+    fetch(`${base_url}/v1/peoples/18`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          character: {
+            name: data.name,
+            birth_year: data.birth_year,
+            img_url: `${base_url}/${data.image}`
+          },
+          isLoading: false
+        })
+      })
+  }
+
+  render() {
+    if (this.state.isLoading) {
+      return (
+        <div className="App spinner-border text-primary">
+        </div>
+      );
+    } else {
+      return (
+        <div className="App">
+          <h1>Name: {this.state.character.name}</h1>
+          <h2>Birth year: {this.state.character.birth_year}</h2>
+          <img src={this.state.character.img_url} alt={this.state.character.name}/>
+        </div>
+      );
+    }
+
+  }
+
 }
 
 export default App;
