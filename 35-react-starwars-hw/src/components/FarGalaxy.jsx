@@ -11,6 +11,7 @@ class FarGalaxy extends React.Component {
         };
     }
     componentDidMount() {
+        
             const number = Math.floor(1 + Math.random() * 6);
             fetch(`${url}/v1/films/${number}`)
                 .then(response => response.json())

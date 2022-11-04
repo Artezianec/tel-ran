@@ -1,30 +1,43 @@
 import React from 'react';
 import styles from "../css_modules/aboutMe.module.css";
-import { base_url } from "../utils/constants";
+import { base_url, period_month } from "../utils/constants";
 
 class AboutMe extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      hero: {}
+    };
   }
 
   componentDidMount() {
-    fetch(`${base_url}/v1/peoples/1`)
-      .then(response => response.json())
-      .then(data => {
-        let info = {
-          "name": data.name,
-          "height": data.height,
-          "mass": data.mass,
-          "hair_color": data.hair_color,
-          "skin_color": data.skin_color,
-          "eye_color": data.eye_color,
-          "birth_year": data.birth_year,
-          "gender": data.gender
-        };
-        this.setState({ hero: info });
-      });
+    let hero = JSON.parse(localStorage.getItem('hero'));
+    if (hero && (Date.now() - new Date(hero.time)) < period_month) {
+      this.setState({ hero: hero.info });
+    } else {
+      fetch(`${base_url}/v1/peoples/1`)
+        .then(response => response.json())
+        .then(data => {
+          let info = {
+            "name": data.name,
+            "height": data.height,
+            "mass": data.mass,
+            "hair_color": data.hair_color,
+            "skin_color": data.skin_color,
+            "eye_color": data.eye_color,
+            "birth_year": data.birth_year,
+            "gender": data.gender
+          };
+          this.setState({ hero: info });
+          hero = {
+            info,
+            time: Date.now()
+          };
+          localStorage.setItem('hero', JSON.stringify(hero));
+        });
+    }
   }
+
 
   render() {
     return (

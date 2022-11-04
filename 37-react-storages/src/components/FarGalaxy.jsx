@@ -11,12 +11,18 @@ class FarGalaxy extends React.Component {
         }
     }
     componentDidMount() {
-        const episode = Math.floor(1 + Math.random() * 6);
-        fetch(`${base_url}/v1/films/${episode}`)
-            .then(response => response.json())
-            .then(data => {
-                this.setState({ opening_crawl: data.opening_crawl });
-            });
+        const opening_crawl_text = sessionStorage.getItem('opening_crawl');
+        if (opening_crawl_text) {
+            this.setState({ opening_crawl: opening_crawl_text });
+
+        } else {
+            const episode = Math.floor(1 + Math.random() * 6);
+            fetch(`${base_url}/v1/films/${episode}`)
+                .then(response => response.json())
+                .then(data => {
+                    this.setState({ opening_crawl: data.opening_crawl });
+                });
+        }
     }
 
     render() {

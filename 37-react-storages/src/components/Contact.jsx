@@ -1,6 +1,6 @@
 import React from 'react';
 import "../css_modules/contact.module.css";
-import { base_url } from "../utils/constants";
+import { base_url, period_month } from "../utils/constants";
 
 class Contact extends React.Component {
   constructor(props) {
@@ -15,10 +15,20 @@ class Contact extends React.Component {
     const json = await response.json();
     const planets = json.map(item => item.name);
     this.setState({ planets });
+    const info = {
+      payload: planets,
+      time: Date.now
+    }
+    localStorage.setItem('planets', JSON.stringify(info));
   }
 
   componentDidMount() {
-    this.fillPlanets(`${base_url}/v1/planets`);
+    const planets = JSON.parse(localStorage.getItem('planets'));
+    if (planets && ((Date.now - new Date(planets.time))) < period_month) {
+      this.setState({ planets: planets.payload });
+    } else {
+      this.fillPlanets(`${base_url}/v1/planets`);
+    }
   }
 
   render() {
