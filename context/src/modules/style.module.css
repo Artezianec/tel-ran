@@ -1,0 +1,48 @@
+.user{
+    display: flex;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.userProperty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    padding: 10px;
+    font-size: 1rem;
+    border-left: 1px solid black;
+}
+
+.modalWrapper{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(0.3vw);
+}
+
+.modalContent{
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+    filter: drop-shadow(0 0 11px rgba(0, 0, 0, 9px));
+    box-shadow: 0px 5px 10px 0px #0000003d;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.closeIcon {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    cursor: pointer;
+}
