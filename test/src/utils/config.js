@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+const {useCallback} = require("react");
 
 const app = express();
 
@@ -23,10 +24,8 @@ app.post('/register', (req, res) => {
     db.query('INSERT INTO users (id,username,password,email) VALUES (?,?,?,?)',
         [id, username, password, email],
         (err, result) => {
-            console.log(err);
-            console.log(result);
-        }
-    );
+
+        });
 });
 
 app.post('/login', (req, res) => {

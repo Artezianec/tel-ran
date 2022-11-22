@@ -180,7 +180,7 @@ yarn start
 │   ├── manifest.json
 │   └── robots.txt
 ├── src
-│   ├── App.css
+│   ├── style.modules.css
 │   ├── App.js
 │   ├── assets
 │   │   ├── fonts
