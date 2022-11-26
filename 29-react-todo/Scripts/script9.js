@@ -16,7 +16,6 @@ class Task extends React.Component {
     }
 
     handleClickSave = () => {
-        //TODO
         this.setState({ isEdit: false });
     }
 
