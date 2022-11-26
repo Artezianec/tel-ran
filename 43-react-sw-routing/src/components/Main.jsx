@@ -7,12 +7,12 @@ import StarWars from './StarWars';
 
 const Main = ({currentPage}) => {
 
-  switch (currentPage) {
-    case navItems[1]:
+  switch (currentPage.route) {
+    case navItems[1].route:
       return <AboutMe />
-    case navItems[2]:
+    case navItems[2].route:
       return <StarWars />
-    case navItems[3]:
+    case navItems[3].route:
       return <Contact />
     default:
       return <Home />

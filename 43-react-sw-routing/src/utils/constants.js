@@ -10,10 +10,14 @@ import friend9 from '../Images/friend9.jpg';
 
 export const base_url = 'https://sw-info-api.herokuapp.com';
 
-export const friends = [friend1, friend2, friend3, friend4, friend5, friend6, 
-    friend7, friend8, friend9];
+export const friends = [friend1, friend2, friend3, friend4, friend5, friend6,
+	friend7, friend8, friend9];
 
-export const navItems = ['Home', 'About me', 'Star Wars', 'Contact'];
+export const navItems = [
+	{title: 'Home', route: 'home'},
+	{title: 'About me', route: 'about_me'},
+	{title: 'Star Wars', route: 'star_wars'},
+	{title: 'Contact', route: 'contact'}];
 
 export const period_month = 30 * 24 * 60 * 60 * 1000;
 

@@ -11,7 +11,7 @@ const AboutMe = props => {
   useEffect(() => {
     const hero = JSON.parse(localStorage.getItem('hero'));
     if (hero && ((Date.now() - hero.time) < period_month)) {
-        setHero({ ...hero.payload });
+        setHero(hero.payload);
     } else {
       fetch(`${base_url}/v1/peoples/1`)
         .then(response => response.json())
@@ -26,7 +26,7 @@ const AboutMe = props => {
             "birth_year": data.birth_year,
             "gender": data.gender
           };
-            setHero({ hero: info });
+            setHero(info);
           info = {
             payload: info,
             time: Date.now()
