@@ -4,20 +4,19 @@ import {useState} from 'react';
 import styles from "../css_modules/aboutMe.module.css";
 import {base_url, period_month} from "../utils/constants";
 
-const AboutMe = props => {
-	const [hero, setHero] = useState()
+const AboutMe = () => {
+	const hash = window.location.hash.split('/'); //hash[2]
+	const [hero, setHero] = useState();
 
 	useEffect(() => {
 		const hero = JSON.parse(localStorage.getItem('hero'));
-        const hash = window.location.hash.split('/');
-        console.log(hash)
-		if (hero && ((Date.now() - hero.time) < period_month)) {
-			setHero(hero.payload);
-		} else {
-			fetch(`${base_url}/v1/peoples/${hash[2]}`)
+		if (!hero || ((Date.now() - hero.time) > period_month) || hero.id !== 1) {
+			const heroId = hash[2] ? hash[2] : 1;
+			fetch(`${base_url}/v1/peoples/${heroId}`)
 				.then(response => response.json())
 				.then(data => {
 					let info = {
+						"id": data.id,
 						"name": data.name,
 						"height": data.height,
 						"mass": data.mass,
@@ -33,7 +32,9 @@ const AboutMe = props => {
 						time: Date.now()
 					}
 					localStorage.setItem('hero', JSON.stringify(info));
-				});
+				})
+		} else {
+			setHero(hero.payload);
 		}
 
 	}, [])
