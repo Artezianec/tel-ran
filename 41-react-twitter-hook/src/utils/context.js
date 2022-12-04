@@ -14,6 +14,9 @@ const PlaceholderProvider = ({children}) => {
 		followers: defaultFollowers,
 		following: defaultFollowing
 	});
+	const handleChangeName = (name) => {
+		setUser({...user, name: name})
+	}
 
 
 	const changeAvatar = url => {
@@ -29,7 +32,8 @@ const PlaceholderProvider = ({children}) => {
 		user,
 		stats,
 		changeAvatar,
-		style
+		style,
+		changeName : handleChangeName
 	}
 	return (
 		<TwitterContext.Provider value={values}>
