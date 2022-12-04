@@ -17,7 +17,7 @@ const Home = () => {
 		} else {
 			changeHero(heroId);
 		}
-	}, [changeHero, heroId])
+	}, [changeHero, heroId,navigate])
 
 	return (
 		<main className="clearfix">

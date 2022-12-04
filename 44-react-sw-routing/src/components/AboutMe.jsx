@@ -43,7 +43,7 @@ const AboutMe = () => {
 			}
 			changeHero(heroId);
 		}
-	}, [changeHero, heroId])
+	}, [changeHero, heroId,navigate])
 
 	return (
 		<div>
