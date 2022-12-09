@@ -8,7 +8,7 @@ const NavItem = ({item}) => {
 	const {hero} = useContext(SWContext);
 	return (
 		<ul>
-			<li onClick={() => {navigate(`${item.route}/${hero}`)}} className="nav-item btn btn-danger mx-1">{item.title}</li>
+			<li onClick={() => navigate(`${item.route}/${hero}`)} className="nav-item btn btn-danger mx-1">{item.title}</li>
 		</ul>
 	)
 }

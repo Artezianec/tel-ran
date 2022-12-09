@@ -9,10 +9,10 @@ const Friend = ({friend, pos}) => {
 	let styles = 'col-4 p-1';
 
 	if (pos === 7) {
-		styles += style.bottomLeft;
+		styles = `${styles} ${style.bottomLeft}`;
 	}
 	if (pos === 9) {
-		styles += style.bottomRight;
+		styles = `${styles} ${style.bottomRight}`;
 	}
 	return (
 		<Link className={styles} to={`/home/${friend}`}>

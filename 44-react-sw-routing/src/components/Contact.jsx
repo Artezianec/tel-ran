@@ -1,12 +1,15 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { useRef } from 'react';
 import { useState } from 'react';
 import "../css_modules/contact.module.css";
 import { base_url, period_month } from "../utils/constants";
+import emailjs from '@emailjs/browser';
+
 
 const Contact = props => {
 
-
+  const form = useRef();
   const [planets, setPlanets] = useState(['wait...']);
 
   async function fillPlanets(url) {
@@ -31,14 +34,24 @@ const Contact = props => {
 
   }, [])
 
+  const sendEmail = (e) => {
+    e.preventDefault();
 
+    emailjs.sendForm('service_svdcs4o', 'template_ldekvfr', form.current, 'ZfPoVV3ogATstVFw9')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
   return (
     <div>
-      <form onSubmit={(e) => {
-        e.preventDefault();
-      }}>
+      <form ref={form} onSubmit={sendEmail}>
         <label>First Name
           <input type="text" name="firstname" placeholder="Your name.." />
+        </label>
+        <label>Email
+          <input type="text" name="reply" placeholder="Your email.." />
         </label>
         <label>Planet
           <select name="planet">{
