@@ -9,8 +9,7 @@ const Operation = () => {
 	return (
 		<div>
 			<button onClick={() => store1.dispatch(withdrawAction(sum))}>Windraw</button>
-			<input type='number' value={sum} onChange={(e) => {
-				setSum(+e.target.value)
+			<input type='number' value={sum} onChange={(e) => {setSum(+e.target.value)
 			}}></input>
 			<button onClick={() => store1.dispatch(depositAction(sum))}>Deposit</button>
 		</div>
